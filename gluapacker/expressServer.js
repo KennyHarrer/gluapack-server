@@ -1,20 +1,20 @@
 const fs = require('fs');
 const https = require('https');
-const express = require('express')
+const express = require('express');
 
-require('dotenv').config()
+require('dotenv').config();
 
-const app = express()
+const app = express();
 
 const options = {
-    key: fs.readFileSync(certPath),
-    cert: fs.readFileSync(keyPath)
+    key: fs.readFileSync(process.env.certPath),
+    cert: fs.readFileSync(process.env.keyPath),
 };
-  
+
 https.createServer(options, app).listen(443, () => {
     console.log('HTTPS server running on port 443');
 });
 
-app.listen()
+app.listen();
 
-module.exports = app
+module.exports = app;
