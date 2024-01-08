@@ -23,7 +23,7 @@ function addFileToLuaCache(vsfpath, lua, time) {
 }
 
 function clearLuaCache() {
-    global.luacache = {}
+    global.luacache = []
 }
 
 function getLuaCache() {
