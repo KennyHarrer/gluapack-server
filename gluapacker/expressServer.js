@@ -7,8 +7,8 @@ require('dotenv').config();
 const app = express();
 
 const options = {
-    key: fs.readFileSync(process.env.certPath),
-    cert: fs.readFileSync(process.env.keyPath),
+    key: fs.readFileSync(process.env.keyPath),
+    cert: fs.readFileSync(process.env.certPath),
 };
 
 https.createServer(options, app).listen(443, () => {
