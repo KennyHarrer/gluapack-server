@@ -15,7 +15,7 @@ router.post('/', (req, res) => {
     try {
         luacode = minify(luacode)
     } catch (e) {}
-    addFileToLuaCache(vsfpath, lua)
+    addFileToLuaCache(vsfpath, luacode)
     res.status(200).json({ok:'ok'})
 });
 
