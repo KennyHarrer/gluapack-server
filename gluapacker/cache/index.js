@@ -1,6 +1,7 @@
 function getExistingIndex(vsfpath) {
-    for (i = 0; i < global.luacache.length;i++) {
-        if (lua.vsfpath == vsfpath) { 
+    for (i = 0; i < global.luacache.length; i++) {
+        const luaobj = global.luacache[i]
+        if (luaobj.vsfpath == vsfpath) { 
             return i
         } 
     }
