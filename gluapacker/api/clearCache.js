@@ -4,7 +4,7 @@ const router = express.Router()
 
 router.get('/', (req, res) => {
     clearLuaCache()
-    res.send(200).json({ok:'ok'})
+    res.status(200).json({ok:'ok'})
 })
 
 module.exports = router
