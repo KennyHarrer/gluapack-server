@@ -4,7 +4,7 @@ const express = require('express');
 
 const router = express.Router();
 
-router.use('/addcsluafiles', authMiddleware, require('./addCsLuaFile.js'));
+router.use('/addcsluafiles', authMiddleware, express.text(), require('./addCsLuaFile.js'));
 router.use('/clearcache', authMiddleware, require('./clearCache.js'));
 router.use('/getcsluafiles', require('./getCsLua.js'));
 
