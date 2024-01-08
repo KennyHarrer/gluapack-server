@@ -14,9 +14,7 @@ router.post('/', (req, res) => {
     if (luacode == undefined || luacode.length <= 0) { return res.status(400).json({ error: 'no glua' }); }
     try {
         luacode = minify(luacode)
-    } catch (e) {
-        return res.status(500).json({error:e})
-    }
+    } catch (e) {}
     addFileToLuaCache(vsfpath, lua)
     res.status(200).json({ok:'ok'})
 });
